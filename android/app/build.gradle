@@ -1,0 +1,130 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+ext {
+  versionMajor = 1
+  versionMinor = 19
+
+  k100 = 100000
+  k10 = 10000
+
+  buildNumber = Integer.valueOf(System.env.BUILD_NUMBER ?: 0)
+}
+
+android {
+  compileSdkVersion 29
+
+  defaultConfig {
+    applicationId "org.fs.pshows"
+    minSdkVersion 16
+    targetSdkVersion 29
+    versionCode versionCode(versionMajor, versionMinor, buildNumber, k100, k10)
+    versionName versionName(versionMajor, versionMinor, buildNumber)
+
+    multiDexEnabled true
+
+    vectorDrawables {
+      useSupportLibrary true
+    }
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+
+  buildTypes {
+
+    debug {
+      applicationIdSuffix ".debug"
+
+      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
+      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+
+      resValue "string", "app_name", "Popular Shows Debug"
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+
+    staging {
+      applicationIdSuffix '.staging'
+
+      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
+      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+
+      resValue "string", "app_name", "Popular Shows Staging"
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+
+    release {
+      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
+      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+
+      resValue "string", "app_name", "Popular Shows"
+
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+}
+
+androidExtensions {
+  experimental = true
+}
+
+dependencies {
+  implementation "com.google.code.gson:gson:2.8.5"
+
+  implementation "androidx.appcompat:appcompat:$ANDROID_X_SUPPORT_VERSION"
+
+  implementation "org.fs.architecture:mvi:$MVI_VERSION"
+
+  implementation "androidx.constraintlayout:constraintlayout:$CONSTRAINT_VERSION"
+  implementation "androidx.constraintlayout:constraintlayout-solver:$CONSTRAINT_VERSION"
+
+  implementation "com.squareup.okhttp3:logging-interceptor:$HTTP_VERSION"
+
+  implementation "com.squareup.moshi:moshi:$MOSHI_VERSION"
+  kapt "com.squareup.moshi:moshi-kotlin-codegen:$MOSHI_VERSION"
+
+  implementation "com.android.support:multidex:$MULTIDEX_VERSION"
+
+  kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
+  kapt "com.google.dagger:dagger-android-processor:$DAGGER_VERSION"
+
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$KOTLIN_VERSION"
+
+  implementation "com.github.bumptech.glide:glide:$GLIDE_VERSION"
+  kapt "com.github.bumptech.glide:compiler:$GLIDE_VERSION"
+
+  //room
+  kapt "androidx.room:room-compiler:$ROOM_VERSION"
+
+  testImplementation 'junit:junit:4.12'
+  androidTestImplementation 'com.android.support.test:runner:1.0.2'
+  androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+private static def versionName(Integer versionMajor, Integer versionMinor, Integer buildNumber) {
+  return String.format("%d.%d.%d", versionMajor, versionMinor, buildNumber)
+}
+
+private static def versionCode(Integer versionMajor, Integer versionMinor, Integer buildNumber,
+    Integer k100, Integer k10) {
+  return (versionMajor * k100) + (versionMinor * k10) + buildNumber
+}

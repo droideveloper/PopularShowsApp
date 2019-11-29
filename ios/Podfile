@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Popular Shows' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Popular Shows
+	pod 'MVICocoa', :git => "https://github.com/droideveloper/MVICocoa.git", :branch => "release/1.1.1"
+  pod 'Persist', :git => "https://github.com/droideveloper/Persist.git", :branch => "master"	
+  pod 'FisherExtensions', :git => "https://github.com/droideveloper/KingfisherExtensions.git", :branch => "master"
+  pod 'SwinjectStoryboard', "~> 2.2.0"
+  pod 'Kingfisher', '~> 5.0'
+	
+
+  target 'Popular ShowsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Popular ShowsUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
