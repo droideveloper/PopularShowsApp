@@ -45,8 +45,8 @@ android {
     debug {
       applicationIdSuffix ".debug"
 
-      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
-      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+      buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org\""
+      buildConfigField "String", "API_KEY", "\"be4ce9c89c5a4ffa9e665e3bbd67ce1b\""
 
       resValue "string", "app_name", "Popular Shows Debug"
 
@@ -57,8 +57,8 @@ android {
     staging {
       applicationIdSuffix '.staging'
 
-      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
-      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+      buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org\""
+      buildConfigField "String", "API_KEY", "\"be4ce9c89c5a4ffa9e665e3bbd67ce1b\""
 
       resValue "string", "app_name", "Popular Shows Staging"
 
@@ -67,8 +67,8 @@ android {
     }
 
     release {
-      buildConfigField "String", "BASE_URL", "\"https://www.medikaynak.com\""
-      buildConfigField "String", "API_KEY", "be4ce9c89c5a4ffa9e665e3bbd67ce1b"
+      buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org\""
+      buildConfigField "String", "API_KEY", "\"be4ce9c89c5a4ffa9e665e3bbd67ce1b\""
 
       resValue "string", "app_name", "Popular Shows"
 
