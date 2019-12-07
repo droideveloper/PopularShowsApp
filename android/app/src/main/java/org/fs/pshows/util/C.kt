@@ -20,6 +20,13 @@ sealed class C {
 
   companion object {
 
-    // TODO put constants in here
+    private const val ENDPOINT_SUFFIX = "/3/tv"
+
+    const val POPULAR_SHOWS = "$ENDPOINT_SUFFIX/popular"
+    const val SHOW_EXTRA = "$ENDPOINT_SUFFIX/{showId}"
+    const val SIMILAR_SHOWS = "$ENDPOINT_SUFFIX/{showId}/similar"
+    const val SHOW_IMAGES = "$ENDPOINT_SUFFIX/{showId}/images"
+    const val SHOW_VIDEOS = "$ENDPOINT_SUFFIX/{showId}/videos"
+    const val SHOW_CREDITS = "$ENDPOINT_SUFFIX/{showId}/credits"
   }
 }
