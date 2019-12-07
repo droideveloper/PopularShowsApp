@@ -24,7 +24,7 @@ import java.util.*
 
 @JsonClass(generateAdapter = true)
 @Parcelize
-data class ShowDetail(
+data class ShowExtra(
   @Json(name = "backdrop_path") val backdropPath: String? = null,
   @Json(name = "created_by") val createdBy: List<Credit>? = null,
   @Json(name = "episode_run_time") val episodeRunTime: List<Int>? = null,
@@ -55,6 +55,6 @@ data class ShowDetail(
   @Json(name = "vote_count") val voteCount: Long? = null): Parcelable {
 
   companion object {
-    val EMPTY = ShowDetail()
+    val EMPTY = ShowExtra()
   }
 }

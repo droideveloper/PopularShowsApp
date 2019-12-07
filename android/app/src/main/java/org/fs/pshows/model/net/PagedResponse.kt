@@ -16,8 +16,17 @@
 
 package org.fs.pshows.model.net
 
-sealed class Resource<out T> {
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
-  data class Success<T>(val data: T? = null, val page: Int? = null, val totalPage: Int? = null): Resource<T>()
-  data class Failure<T>(val code: Int? = null, val message: String? = null): Resource<T>()
-}
+@JsonClass(generateAdapter = true)
+data class PagedResponse<T>(
+  val page: Int? = null,
+  @Json(name = "total_pages") val totalPages: Int? = null,
+  val results: T? = null, // since 'Moshi' does not support alternate keys in mapping we had to add all distinct keys in here
+
+  val backdrops: T? = null, // only exist in images api
+  val cast: T? = null, // only exist in credit api
+  val crew: T? = null, // only exists in credit api
+  @Json(name = "status_message") val message: String? = null,
+  @Json(name = "status_code") val code: Int? = null)
