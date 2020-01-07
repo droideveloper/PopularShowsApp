@@ -22,20 +22,24 @@ import org.fs.pshows.model.net.PagedResponse
 import org.fs.pshows.util.C.Companion.POPULAR_SHOWS
 import org.fs.pshows.util.C.Companion.SHOW_CREDITS
 import org.fs.pshows.util.C.Companion.SHOW_EXTRA
+import org.fs.pshows.util.C.Companion.SHOW_GENRES
 import org.fs.pshows.util.C.Companion.SHOW_IMAGES
 import org.fs.pshows.util.C.Companion.SHOW_VIDEOS
 import org.fs.pshows.util.C.Companion.SIMILAR_SHOWS
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Endpoint {
 
-  @GET(POPULAR_SHOWS) fun shows(): Observable<PagedResponse<List<Show>>>
+  @GET(POPULAR_SHOWS) fun shows(@Query("page") page: Int): Observable<PagedResponse<List<Show>>>
   @GET(SHOW_EXTRA) fun shows(@Path("showId") showId: Long): Observable<Response<ShowExtra>>
   @GET(SIMILAR_SHOWS) fun similars(@Path("showId") showId: Long): Observable<PagedResponse<List<Show>>>
 
   @GET(SHOW_IMAGES) fun images(@Path("showId") showId: Long): Observable<PagedResponse<List<Image>>>
   @GET(SHOW_VIDEOS) fun videos(@Path("showId") showId: Long): Observable<PagedResponse<List<Video>>>
   @GET(SHOW_CREDITS) fun credits(@Path("showId") showId: Long): Observable<PagedResponse<List<Credit>>>
+
+  @GET(SHOW_GENRES) fun genres(): Observable<PagedResponse<List<Genre>>>
 }

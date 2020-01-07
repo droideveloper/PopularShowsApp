@@ -22,11 +22,13 @@ import org.fs.pshows.model.net.Resource
 
 interface EndpointProxy {
 
-  fun shows(): Observable<Resource<List<Show>>>
+  fun shows(page: Int): Observable<Resource<List<Show>>>
   fun shows(showId: Long): Observable<Resource<ShowExtra>>
   fun similars(showId: Long): Observable<Resource<List<Show>>>
 
   fun images(showId: Long): Observable<Resource<List<Image>>>
   fun videos(showId: Long): Observable<Resource<List<Video>>>
   fun credits(showId: Long): Observable<Resource<List<Credit>>>
+
+  fun genres(): Observable<Resource<List<Genre>>>
 }

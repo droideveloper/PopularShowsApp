@@ -27,7 +27,7 @@ import javax.inject.Singleton
 @Singleton
 class EndpointProxyImp @Inject constructor(private val endpoint: Endpoint): EndpointProxy {
 
-  override fun shows(): Observable<Resource<List<Show>>> = endpoint.shows()
+  override fun shows(page: Int): Observable<Resource<List<Show>>> = endpoint.shows(page)
     .toResource()
 
   override fun shows(showId: Long): Observable<Resource<ShowExtra>> = endpoint.shows(showId)
@@ -43,5 +43,8 @@ class EndpointProxyImp @Inject constructor(private val endpoint: Endpoint): Endp
     .toResource()
 
   override fun credits(showId: Long): Observable<Resource<List<Credit>>> = endpoint.credits(showId)
+    .toResource()
+
+  override fun genres(): Observable<Resource<List<Genre>>> = endpoint.genres()
     .toResource()
 }

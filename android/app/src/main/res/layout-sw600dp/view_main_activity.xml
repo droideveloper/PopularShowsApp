@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*
+ * Popular Shows Android Kotlin Copyright (C) 2019 Fatih, Open Source.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:support="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.appcompat.widget.Toolbar
+    android:id="@+id/viewToolbar"
+    support:layout_constraintStart_toStartOf="parent"
+    support:layout_constraintTop_toTopOf="parent"
+    support:layout_constraintEnd_toEndOf="parent"
+    android:background="@android:color/white"
+    support:contentInsetStart="@dimen/dp0"
+    support:contentInsetEnd="@dimen/dp0"
+    android:layout_width="@dimen/dp0"
+    tools:elevation="@dimen/dp4"
+    android:layout_height="?attr/actionBarSize">
+
+    <TextView
+      android:id="@+id/viewTextTitle"
+      android:textAppearance="@style/PopularShowsTextAppearance.Bold.Large"
+      android:text="@string/app_name"
+      android:textColor="@color/colorAccent"
+      android:layout_gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+
+  </androidx.appcompat.widget.Toolbar>
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/percent_45"
+    android:orientation="vertical"
+    support:layout_constraintGuide_percent="0.45"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+  <fragment
+    android:id="@+id/viewFragmentFeed"
+    tools:layout="@layout/view_feed_fragment"
+    android:name="org.fs.pshows.view.FeedFragment"
+    support:layout_constraintStart_toStartOf="parent"
+    support:layout_constraintEnd_toStartOf="@+id/percent_45"
+    support:layout_constraintTop_toBottomOf="@+id/viewToolbar"
+    support:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="@dimen/dp0"
+    android:layout_height="@dimen/dp0" />
+
+  <fragment
+    android:id="@+id/viewFragmentDetail"
+    tools:layout="@layout/view_detail_fragment"
+    android:name="org.fs.pshows.view.DetailFragment"
+    support:layout_constraintStart_toEndOf="@+id/percent_45"
+    support:layout_constraintEnd_toEndOf="parent"
+    support:layout_constraintTop_toBottomOf="@+id/viewToolbar"
+    support:layout_constraintBottom_toBottomOf="parent"
+    android:layout_width="@dimen/dp0"
+    android:layout_height="@dimen/dp0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

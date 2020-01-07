@@ -29,4 +29,8 @@ data class Genre(
   companion object {
     val EMPTY = Genre()
   }
+
+  override fun toString(): String {
+    return name ?: super.toString()
+  }
 }

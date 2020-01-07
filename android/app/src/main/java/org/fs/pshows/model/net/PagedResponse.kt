@@ -28,5 +28,6 @@ data class PagedResponse<T>(
   val backdrops: T? = null, // only exist in images api
   val cast: T? = null, // only exist in credit api
   val crew: T? = null, // only exists in credit api
+  val genres: T? = null, // only exists in genre api
   @Json(name = "status_message") val message: String? = null,
   @Json(name = "status_code") val code: Int? = null)

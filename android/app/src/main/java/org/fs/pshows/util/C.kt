@@ -16,9 +16,22 @@
 
 package org.fs.pshows.util
 
+import org.fs.pshows.BuildConfig
+
 sealed class C {
 
   companion object {
+
+    const val RECYCLER_CACHE_SIZE = 10
+
+    const val DB_VERSION = 1
+    const val DB_NAME = "local_storage.db"
+
+    const val KEY_API_KEY = "api_key"
+    const val KEY_LANGUAGE = "language"
+
+    const val AUTH_INTER = "authInterceptor"
+    const val LOG_INTER = "logInterceptor"
 
     private const val ENDPOINT_SUFFIX = "/3/tv"
 
@@ -28,5 +41,30 @@ sealed class C {
     const val SHOW_IMAGES = "$ENDPOINT_SUFFIX/{showId}/images"
     const val SHOW_VIDEOS = "$ENDPOINT_SUFFIX/{showId}/videos"
     const val SHOW_CREDITS = "$ENDPOINT_SUFFIX/{showId}/credits"
+    const val SHOW_GENRES = "/3/genre/tv/list" // this one is little bit weird of their pattern
+
+    private const val IMAGE_SUFFIX = "/t/p/"
+    const val IMAGE_URL = "${BuildConfig.IMAGE_BASE_URL}$IMAGE_SUFFIX"
+
+    const val YOUTUBE_IMAGE_URL = "https://img.youtube.com/vi/"
+
+    const val IMAGE_TYPE_SMALL = "w200"
+    const val IMAGE_TYPE_LARGE = "w500"
+    const val IMAGE_TYPE_ORIGINAL = "original"
+
+    const val GENRE_JOINT = " \u2022 "
+
+    const val VIEW_TYPE_SIMPLE = 0x01
+    const val VIEW_TYPE_PROGRESS = 0x02
+
+    const val DETAIL_TYPE_SPOT = 0x01
+    const val DETAIL_TYPE_SEASON = 0x02
+    const val DETAIL_TYPE_CREDIT = 0x03
+    const val DETAIL_TYPE_SIMILAR = 0x04
+    const val DETAIL_TYPE_IMAGE = 0x05
+    const val DETAIL_TYPE_VIDEO = 0x06
+    const val DETAIL_TYPE_TITLE = 0x07
+
+    const val BUNDLE_EXTRA_SHOW = "bundle.extra.show"
   }
 }

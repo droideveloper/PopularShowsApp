@@ -20,17 +20,20 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
+import org.fs.pshows.util.C.Companion.DETAIL_TYPE_IMAGE
 
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class Image(
   @Json(name = "aspect_ratio") val aspectRatio: Double? = null,
-  @Json(name = "fill_path") val fillPath: String? = null,
+  @Json(name = "file_path") val filePath: String? = null,
   val height: Int? = null,
   val width: Int? = null,
   @Json(name = "iso_639_1") val iso: String? = null,
   @Json(name = "vote_average") val voteAverage: Double? = null,
-  @Json(name = "vote_count") val voteCount: Long? = null): Parcelable {
+  @Json(name = "vote_count") val voteCount: Long? = null): Parcelable, Extra {
+
+  override fun type(): Int = DETAIL_TYPE_IMAGE
 
   companion object {
     val EMPTY = Image()

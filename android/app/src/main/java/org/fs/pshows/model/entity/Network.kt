@@ -27,16 +27,7 @@ data class Network(
   val name: String? = null,
   val id: Long? = null,
   @Json(name = "logo_path") val logoPath: String? = null,
-  @Json(name = "origin_country") val originCountry: String? = null
-): Parcelable {
-
-  /*
-     "name": "HBO",
-      "id": 49,
-      "logo_path": "/tuomPhY2UtuPTqqFnKMVHvSb724.png",
-      "origin_country": "US"
-    }
-   */
+  @Json(name = "origin_country") val originCountry: String? = null): Parcelable {
 
   companion object {
     val EMPTY = Network()

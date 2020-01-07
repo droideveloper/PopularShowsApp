@@ -37,21 +37,6 @@ data class Episode(
   @Json(name = "vote_average") val voteAverage: Double? = null,
   @Json(name = "vote_count") val voteCount: Int? = null): Parcelable {
 
-
-  /*
-  "air_date": "2017-08-27",
-    "episode_number": 7,
-    "id": 1340528,
-    "name": "The Dragon and the Wolf",
-    "overview": "A meeting is held in King's Landing. Problems arise in the North.",
-    "production_code": "707",
-    "season_number": 7,
-    "show_id": 1399,
-    "still_path": "/jLe9VcbGRDUJeuM8IwB7VX4GDRg.jpg",
-    "vote_average": 9.145,
-    "vote_count": 31
-
-   */
   companion object {
     val EMPTY = Episode()
   }
