@@ -20,6 +20,7 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
+import org.fs.pshows.util.C.Companion.DETAIL_TYPE_SPOT
 import java.util.*
 
 @JsonClass(generateAdapter = true)
@@ -52,7 +53,10 @@ data class ShowExtra(
   val status: String? = null,
   val type: String? = null,
   @Json(name = "vote_average") val voteAverage: Double? = null,
-  @Json(name = "vote_count") val voteCount: Long? = null): Parcelable {
+  @Json(name = "vote_count") val voteCount: Long? = null,
+  @Transient val show: Show? = null): Parcelable, Extra {
+
+  override fun type(): Int = DETAIL_TYPE_SPOT
 
   companion object {
     val EMPTY = ShowExtra()

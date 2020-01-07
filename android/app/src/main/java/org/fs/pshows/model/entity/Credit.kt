@@ -19,18 +19,22 @@ package org.fs.pshows.model.entity
 import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.IgnoredOnParcel
 import kotlinx.android.parcel.Parcelize
+import org.fs.pshows.util.C.Companion.DETAIL_TYPE_CREDIT
 
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class Credit(
   val id: Long? = null,
-  @Json(name = "credit_id") val creditId: Long? = null,
+  @Json(name = "credit_id") val creditId: String? = null,
   val name: String? = null,
   val gender: Int? = null,
   val order: Int? = null,
   val character: String? = null,
-  @Json(name = "profile_path") val profilePath: String? = null): Parcelable {
+  @Json(name = "profile_path") val profilePath: String? = null): Parcelable, Extra {
+
+  override fun type(): Int = DETAIL_TYPE_CREDIT
 
   companion object {
     val EMPTY = Credit()

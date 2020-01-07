@@ -20,6 +20,7 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
+import org.fs.pshows.util.C.Companion.DETAIL_TYPE_VIDEO
 
 @JsonClass(generateAdapter = true)
 @Parcelize
@@ -31,8 +32,9 @@ data class Video(
   val name: String? = null,
   val site: String? = null,
   val size: Int? = null,
-  val type: String? = null
-): Parcelable {
+  val type: String? = null): Parcelable, Extra {
+
+  override fun type(): Int = DETAIL_TYPE_VIDEO
 
   companion object {
     val EMPTY = Video()

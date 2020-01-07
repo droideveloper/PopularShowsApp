@@ -1,2 +1,7 @@
 <resources>
+  <string name="str_title_credit">Credit</string>
+  <string name="str_title_seasons">Seasons</string>
+  <string name="str_title_similar_series">Similar Series</string>
+  <string name="str_title_images">Images</string>
+  <string name="str_title_videos">Videos</string>
 </resources>

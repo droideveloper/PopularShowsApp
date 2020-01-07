@@ -21,10 +21,17 @@ sealed class Operations {
   companion object {
 
     const val LOAD = 0x01
-    const val RE_LOAD = 0x02
+    const val LOAD_MORE = 0x02
+    const val CHANGE_CHECK = 0x03
 
-    const val CHECK_ADDED = 0x03
-    const val ADD_BOOKMARK = 0x04
-    const val REMOVE_BOOKMARK = 0x05
+    const val CHECK_ADDED = 0x04
+    const val ADD_BOOKMARK = 0x05
+    const val REMOVE_BOOKMARK = 0x06
+
+    const val LOAD_DETAIL_SPOT = 0x07
+    const val LOAD_DETAIL_CREDIT = 0x08
+    const val LOAD_DETAIL_IMAGE = 0x09
+    const val LOAD_DETAIL_VIDEO = 0x10
+    const val LOAD_DETAIL_SIMILARS = 0x11
   }
 }

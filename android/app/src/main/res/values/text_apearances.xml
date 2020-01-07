@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+/*
+ * Popular Shows Android Kotlin Copyright (C) 2019 Fatih, Open Source.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
+<resources>
+  <style name="PopularShowsTextAppearance" parent="TextAppearance.AppCompat" />
+
+  <style name="PopularShowsTextAppearance.Regular" parent="PopularShowsTextAppearance">
+    <item name="font">@font/robot_regular</item>
+    <item name="fontFamily">@font/robot_regular</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Regular.Small" parent="PopularShowsTextAppearance.Regular">
+    <item name="android:textSize">@dimen/sp12</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Regular.Medium" parent="PopularShowsTextAppearance.Regular">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Regular.Large" parent="PopularShowsTextAppearance.Regular">
+    <item name="android:textSize">@dimen/sp18</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Black" parent="PopularShowsTextAppearance">
+    <item name="font">@font/roboto_black</item>
+    <item name="fontFamily">@font/roboto_black</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Black.Small" parent="PopularShowsTextAppearance.Black">
+    <item name="android:textSize">@dimen/sp12</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Black.Medium" parent="PopularShowsTextAppearance.Black">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Black.Large" parent="PopularShowsTextAppearance.Black">
+    <item name="android:textSize">@dimen/sp18</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Bold" parent="PopularShowsTextAppearance">
+    <item name="font">@font/roboto_bold</item>
+    <item name="fontFamily">@font/roboto_bold</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Bold.Small" parent="PopularShowsTextAppearance.Bold">
+    <item name="android:textSize">@dimen/sp12</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Bold.Medium" parent="PopularShowsTextAppearance.Bold">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Bold.Large" parent="PopularShowsTextAppearance.Bold">
+    <item name="android:textSize">@dimen/sp18</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Light" parent="PopularShowsTextAppearance">
+    <item name="font">@font/roboto_light</item>
+    <item name="fontFamily">@font/roboto_light</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Light.Small" parent="PopularShowsTextAppearance.Light">
+    <item name="android:textSize">@dimen/sp12</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Light.Medium" parent="PopularShowsTextAppearance.Light">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Light.Large" parent="PopularShowsTextAppearance.Light">
+    <item name="android:textSize">@dimen/sp18</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Medium" parent="PopularShowsTextAppearance">
+    <item name="font">@font/roboto_medium</item>
+    <item name="fontFamily">@font/roboto_medium</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Medium.Small" parent="PopularShowsTextAppearance.Medium">
+    <item name="android:textSize">@dimen/sp12</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Medium.Medium" parent="PopularShowsTextAppearance.Medium">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="PopularShowsTextAppearance.Medium.Large" parent="PopularShowsTextAppearance.Medium">
+    <item name="android:textSize">@dimen/sp18</item>
+  </style>
+
+</resources>

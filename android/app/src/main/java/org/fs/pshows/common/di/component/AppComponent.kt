@@ -22,8 +22,11 @@ import dagger.android.support.AndroidSupportInjectionModule
 import org.fs.pshows.App
 import org.fs.pshows.common.di.module.AppModule
 import org.fs.pshows.common.di.module.NetworkModule
+import org.fs.pshows.common.di.module.ProviderAppModule
+import javax.inject.Singleton
 
-@Component(modules = [AndroidSupportInjectionModule::class, AppModule::class, NetworkModule::class])
+@Singleton
+@Component(modules = [AndroidSupportInjectionModule::class, AppModule::class, ProviderAppModule::class, NetworkModule::class])
 interface AppComponent: AndroidInjector<App> {
 
   @Component.Builder

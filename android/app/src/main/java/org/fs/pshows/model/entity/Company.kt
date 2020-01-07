@@ -27,15 +27,7 @@ data class Company(
   val id: Long? = null,
   @Json(name = "logo_path") val logoPath: String? = null,
   val name: String? = null,
-  @Json(name = "origin_country") val originCountry: String? = null
-): Parcelable {
-
-  /*
-  "id": 76043,
-      "logo_path": "/9RO2vbQ67otPrBLXCaC8UMp3Qat.png",
-      "name": "Revolution Sun Studios",
-      "origin_country": "US"
-   */
+  @Json(name = "origin_country") val originCountry: String? = null): Parcelable {
 
   companion object {
     val EMPTY = Company()

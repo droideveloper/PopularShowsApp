@@ -20,6 +20,7 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
+import org.fs.pshows.util.C.Companion.DETAIL_TYPE_SEASON
 import java.util.*
 
 @Parcelize
@@ -31,19 +32,9 @@ data class Season(
   val name: String? = null,
   val overview: String? = null,
   @Json(name = "poster_path") val posterPath: String? = null,
-  @Json(name = "season_number") val seasonNumber: Int? = null): Parcelable {
+  @Json(name = "season_number") val seasonNumber: Int? = null): Parcelable, Extra {
 
-  /*
-     {
-      "air_date": "2010-12-05",
-      "episode_count": 14,
-      "id": 3627,
-      "name": "Specials",
-      "overview": "",
-      "poster_path": "/kMTcwNRfFKCZ0O2OaBZS0nZ2AIe.jpg",
-      "season_number": 0
-    }
-   */
+  override fun type(): Int = DETAIL_TYPE_SEASON
 
   companion object {
     val EMPTY = Season()
